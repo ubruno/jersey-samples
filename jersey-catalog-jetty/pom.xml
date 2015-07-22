@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.ubruno</groupId>
 	<artifactId>jersey-catalog-jetty</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-beta</version>
 	<packaging>jar</packaging>
 	<build>
 		<plugins>

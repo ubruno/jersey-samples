@@ -9,9 +9,16 @@ import com.ericsson.charter.poc.resources.TitlesResource;
 public class Main {
     public static void main(String[] args) throws Exception {
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.setContextPath("/jersey-catalog-jetty");
+        context.setContextPath("/");
  
-        Server jettyServer = new Server(8080);
+        int port = 8080;
+        if(args != null && args.length > 0 ){
+        	if(args[0].contains("port")){
+        		port = Integer.parseInt(args[0].split("=")[1]);
+        	}
+        }
+        
+        Server jettyServer = new Server(port);
         jettyServer.setHandler(context);
  
         ServletHolder jerseyServlet = context.addServlet(
